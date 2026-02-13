@@ -1,5 +1,4 @@
-# Python Automation, Loops, and Conditionals: 12th Feb
-
+# Academic Lecture 5 - Python: Loops & Automation
 
 ---
 
