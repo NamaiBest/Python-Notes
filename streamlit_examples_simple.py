@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 st.set_page_config(page_title="Streamlit Simple Pack", layout="centered")
 
 st.title("Streamlit Simple Pack")
-st.write("No sidebar: all 4 sections are shown in simple order.")
 
 st.markdown("---")
 st.header("1) Hello Demo")
@@ -18,6 +17,8 @@ if name:
 st.caption("Tags used: st.title/st.header, st.text_input, st.write, st.caption")
 
 st.markdown("---")
+
+
 st.header("2) Car Filter")
 df = pd.DataFrame({
     "car": ["Swift", "i20", "City", "Nexon", "Creta", "Amaze", "Baleno", "Venue"],
@@ -25,13 +26,17 @@ df = pd.DataFrame({
     "fuel": ["Petrol", "Petrol", "Petrol", "Diesel", "Diesel", "Petrol", "CNG", "Diesel"],
     "year": [2021, 2020, 2019, 2022, 2023, 2021, 2020, 2022],
 })
+
 max_price = st.slider("Show cars priced up to (lakh)", 5.0, 16.0, 12.0, 0.1)
 filtered = df[df["price_lakh"] <= max_price]
 st.dataframe(filtered, use_container_width=True)
 st.bar_chart(filtered.set_index("car")["price_lakh"])
+
+
 st.caption("Tags used: st.slider, st.dataframe, st.bar_chart")
 
 st.markdown("---")
+
 st.header("3) Titanic Counts")
 titanic = sns.load_dataset("titanic")
 fig, ax = plt.subplots(figsize=(5, 3))
